@@ -1,0 +1,333 @@
+/* ==========================================================================
+   06 - TEXT SUMMARIZATION SYSTEM STYLESHEET
+   Clean modern glassmorphism UI with metric dashboards and summary display.
+   ========================================================================== */
+
+:root {
+    --primary: #10b981;
+    --primary-hover: #059669;
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #064e3b 100%);
+    --card-bg: rgba(30, 41, 59, 0.75);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --success: #34d399;
+    --highlight: #38bdf8;
+    --radius-lg: 16px;
+    --radius-md: 10px;
+    --transition: all 0.25s ease-in-out;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    color: var(--text-main);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Header */
+.app-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.app-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #34d399, #a7f3d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* Main Card */
+.main-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Presets */
+.preset-section {
+    margin-bottom: 1.5rem;
+}
+
+.preset-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.btn-preset {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    color: var(--text-main);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-preset:hover {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: var(--primary);
+    transform: translateY(-1px);
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-label {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.stats-counter {
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+textarea {
+    width: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    color: var(--text-main);
+    font-size: 1rem;
+    line-height: 1.5;
+    resize: vertical;
+    outline: none;
+    transition: var(--transition);
+}
+
+textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+}
+
+/* Controls Row */
+.controls-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.2rem;
+}
+
+.slider-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.select-dropdown {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--card-border);
+    color: var(--text-main);
+    padding: 0.5rem 0.8rem;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    outline: none;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #0f172a;
+    flex: 2;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    flex: 1;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.divider {
+    height: 1px;
+    background: var(--card-border);
+    margin: 2rem 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Results Section */
+.results-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.metric-card {
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.metric-title {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.3rem;
+}
+
+.metric-number {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.text-success { color: var(--success); }
+.text-highlight { color: var(--highlight); }
+
+/* Summary Box */
+.summary-box {
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+}
+
+.summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.box-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.btn-copy {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--card-border);
+    color: var(--text-main);
+    padding: 0.3rem 0.7rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-copy:hover {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: var(--primary);
+}
+
+.summary-content {
+    background: rgba(15, 23, 42, 0.6);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    border: 1px dashed var(--card-border);
+}
+
+/* Footer */
+.app-footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 650px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    .action-buttons {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarization System | Text & Speech Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo-icon">📄✂️</div>
+            <h1>Text Summarization System</h1>
+            <p class="subtitle">Extract key sentences from long articles using Extractive Sentence Frequency Scoring</p>
+        </header>
+
+        <!-- Main Card -->
+        <main class="main-card">
+            <!-- Sample Article Section -->
+            <section class="preset-section">
+                <span class="preset-label">Try sample article:</span>
+                <div class="preset-buttons">
+                    <button type="button" id="sampleBtn" class="btn-preset">📰 Load Artificial Intelligence Article</button>
+                </div>
+            </section>
+
+            <!-- Input Area -->
+            <section class="input-section">
+                <div class="label-row">
+                    <label for="textInput" class="input-label">Enter or Paste Long Text:</label>
+                    <div class="stats-counter"><span id="charCount">0</span> Chars | <span id="wordCount">0</span> Words</div>
+                </div>
+                <textarea id="textInput" placeholder="Paste your long article, essay, or document here..." rows="8"></textarea>
+                
+                <!-- Length Controls -->
+                <div class="controls-row">
+                    <label for="summaryRatio" class="slider-label">Summary Length:</label>
+                    <select id="summaryRatio" class="select-dropdown">
+                        <option value="0.3">Short (30% of key sentences)</option>
+                        <option value="0.5" selected>Medium (50% of key sentences)</option>
+                        <option value="0.7">Detailed (70% of key sentences)</option>
+                    </select>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="summarizeBtn" class="btn btn-primary">
+                        <span class="btn-icon">⚡</span> Summarize Text
+                    </button>
+                    <button id="clearBtn" class="btn btn-secondary">
+                        <span class="btn-icon">🗑️</span> Clear
+                    </button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section hidden">
+                <div class="divider"></div>
+                <h2>Summary Output</h2>
+
+                <!-- Metrics Dashboard -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-title">Original Words</span>
+                        <span id="origWordCount" class="metric-number">0</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-title">Summary Words</span>
+                        <span id="summWordCount" class="metric-number text-success">0</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-title">Compression Ratio</span>
+                        <span id="compressionRatio" class="metric-number text-highlight">0%</span>
+                    </div>
+                </div>
+
+                <!-- Summary Text Box -->
+                <div class="summary-box">
+                    <div class="summary-header">
+                        <span class="box-title">Extracted Key Sentences Summary:</span>
+                        <button id="copyBtn" class="btn-copy">📋 Copy Summary</button>
+                    </div>
+                    <div id="summaryText" class="summary-content"></div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Text & Speech Analysis Project #6 &bull; Frequency-Based Extractive Summarization</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
